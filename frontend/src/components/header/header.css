@@ -1,0 +1,21 @@
+.main{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.card{
+    padding: 30px;
+}
+
+.nav-link{
+    color: black;
+    text-decoration: none;
+}
+.active-link{
+    color: blue;
+    text-decoration: none;
+}

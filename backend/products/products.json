@@ -1,0 +1,452 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Earbuds",
+      "description": "True wireless earbuds with noise reduction.",
+      "price": 1299,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1599669454699-248893623440?w=300&h=300&fit=crop",
+      "stock": 50
+    },
+    {
+      "id": 2,
+      "name": "Smart Fitness Band",
+      "description": "Fitness tracker with heart rate monitoring.",
+      "price": 999,
+      "category": "Wearables",
+      "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=300&h=300&fit=crop",
+      "stock": 80
+    },
+    {
+      "id": 3,
+      "name": "USB Type-C Charger",
+      "description": "Fast-charging USB Type-C wall adapter.",
+      "price": 499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1609592810793-abeb6c64b5c6?w=300&h=300&fit=crop",
+      "stock": 120
+    },
+    {
+      "id": 4,
+      "name": "LED Desk Lamp",
+      "description": "Adjustable LED desk lamp with touch control.",
+      "price": 699,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+      "stock": 30
+    },
+    {
+      "id": 5,
+      "name": "Waterproof Backpack",
+      "description": "Durable waterproof backpack for travel.",
+      "price": 1499,
+      "category": "Bags",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop",
+      "stock": 45
+    },
+    {
+      "id": 6,
+      "name": "Men's Running Shoes",
+      "description": "Comfortable running shoes with breathable mesh.",
+      "price": 1999,
+      "category": "Footwear",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop",
+      "stock": 70
+    },
+    {
+      "id": 7,
+      "name": "Women's Handbag",
+      "description": "Stylish and durable handbag for daily use.",
+      "price": 899,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&h=300&fit=crop",
+      "stock": 40
+    },
+    {
+      "id": 8,
+      "name": "Portable Bluetooth Speaker",
+      "description": "Mini speaker with deep bass and long battery life.",
+      "price": 1299,
+      "category": "Audio",
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop",
+      "stock": 55
+    },
+    {
+      "id": 9,
+      "name": "Gaming Mouse",
+      "description": "Ergonomic mouse with 6 programmable buttons.",
+      "price": 799,
+      "category": "Computer Accessories",
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop",
+      "stock": 60
+    },
+    {
+      "id": 10,
+      "name": "Mechanical Keyboard",
+      "description": "RGB backlit mechanical keyboard.",
+      "price": 2499,
+      "category": "Computer Accessories",
+      "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=300&fit=crop",
+      "stock": 35
+    },
+    {
+      "id": 11,
+      "name": "Cotton T-Shirt",
+      "description": "Soft and comfortable cotton t-shirt.",
+      "price": 299,
+      "category": "Clothing",
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop",
+      "stock": 150
+    },
+    {
+      "id": 12,
+      "name": "Stainless Steel Bottle",
+      "description": "Hot and cold insulated stainless steel bottle.",
+      "price": 499,
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop",
+      "stock": 90
+    },
+    {
+      "id": 13,
+      "name": "Office Chair",
+      "description": "Comfortable ergonomic office chair.",
+      "price": 3999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop",
+      "stock": 25
+    },
+    {
+      "id": 14,
+      "name": "Analog Wrist Watch",
+      "description": "Stylish wrist watch with leather strap.",
+      "price": 1599,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop",
+      "stock": 50
+    },
+    {
+      "id": 15,
+      "name": "Electric Kettle",
+      "description": "1.5L stainless steel electric kettle.",
+      "price": 899,
+      "category": "Home Appliances",
+      "image": "https://images.unsplash.com/photo-1593369196680-02190a7ee0f2?w=300&h=300&fit=crop",
+      "stock": 48
+    },
+    {
+      "id": 16,
+      "name": "Yoga Mat",
+      "description": "Non-slip, thick yoga and exercise mat.",
+      "price": 699,
+      "category": "Fitness",
+      "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=300&h=300&fit=crop",
+      "stock": 65
+    },
+    {
+      "id": 17,
+      "name": "Electric Hair Trimmer",
+      "description": "Rechargeable trimmer with multiple length settings.",
+      "price": 799,
+      "category": "Personal Care",
+      "image": "https://images.unsplash.com/photo-1604514288110-24717362c6c7?w=300&h=300&fit=crop",
+      "stock": 55
+    },
+    {
+      "id": 18,
+      "name": "Sunglasses",
+      "description": "UV-protected stylish sunglasses.",
+      "price": 499,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop",
+      "stock": 85
+    },
+    {
+      "id": 19,
+      "name": "Laptop Stand",
+      "description": "Adjustable aluminum laptop stand.",
+      "price": 999,
+      "category": "Computer Accessories",
+      "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=300&fit=crop",
+      "stock": 70
+    },
+    {
+      "id": 20,
+      "name": "Power Bank 10000mAh",
+      "description": "Fast-charging power bank with dual USB output.",
+      "price": 1199,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?w=300&h=300&fit=crop",
+      "stock": 75
+    },
+    {
+      "id": 21,
+      "name": "HD Webcam",
+      "description": "1080p webcam with noise-canceling microphone.",
+      "price": 1499,
+      "category": "Computer Accessories",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=300&h=300&fit=crop",
+      "stock": 45
+    },
+    {
+      "id": 22,
+      "name": "Microfiber Towel",
+      "description": "Quick-dry microfiber towel for sports.",
+      "price": 299,
+      "category": "Fitness",
+      "image": "https://images.unsplash.com/photo-1600881333240-2317b7f9a9fc?w=300&h=300&fit=crop",
+      "stock": 100
+    },
+    {
+      "id": 23,
+      "name": "Portable Tripod Stand",
+      "description": "Lightweight mobile tripod stand.",
+      "price": 349,
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop",
+      "stock": 90
+    },
+    {
+      "id": 24,
+      "name": "Smart LED Bulb",
+      "description": "WiFi-enabled RGB smart bulb.",
+      "price": 599,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25856cd63?w=300&h=300&fit=crop",
+      "stock": 65
+    },
+    {
+      "id": 25,
+      "name": "Leather Wallet",
+      "description": "Premium leather men's wallet.",
+      "price": 699,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=300&h=300&fit=crop",
+      "stock": 85
+    },
+    {
+      "id": 26,
+      "name": "Portable Hard Drive 1TB",
+      "description": "External HDD with fast data transfer.",
+      "price": 4499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=300&fit=crop",
+      "stock": 32
+    },
+    {
+      "id": 27,
+      "name": "4K Action Camera",
+      "description": "Waterproof action camera with accessories.",
+      "price": 3999,
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop",
+      "stock": 20
+    },
+    {
+      "id": 28,
+      "name": "Ceiling Fan",
+      "description": "Energy-efficient 3-blade ceiling fan.",
+      "price": 1799,
+      "category": "Home Appliances",
+      "image": "https://images.unsplash.com/photo-1580476262383-2ef6c6e499cc?w=300&h=300&fit=crop",
+      "stock": 40
+    },
+    {
+      "id": 29,
+      "name": "Electric Iron",
+      "description": "Non-stick soleplate electric iron.",
+      "price": 899,
+      "category": "Home Appliances",
+      "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=300&fit=crop",
+      "stock": 50
+    },
+    {
+      "id": 30,
+      "name": "Smartphone Stand",
+      "description": "Foldable mobile phone stand.",
+      "price": 199,
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=300&h=300&fit=crop",
+      "stock": 140
+    },
+    {
+      "id": 31,
+      "name": "Bluetooth Keyboard",
+      "description": "Compact wireless Bluetooth keyboard.",
+      "price": 1199,
+      "category": "Computer Accessories",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=300&fit=crop",
+      "stock": 55
+    },
+    {
+      "id": 32,
+      "name": "Gaming Headset",
+      "description": "Over-ear gaming headset with microphone.",
+      "price": 1999,
+      "category": "Audio",
+      "image": "https://images.unsplash.com/photo-1599669454699-248893623440?w=300&h=300&fit=crop",
+      "stock": 38
+    },
+    {
+      "id": 33,
+      "name": "Air Tight Storage Containers",
+      "description": "Set of 5 BPA-free storage containers.",
+      "price": 549,
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1556909114-4d0d853e5e25?w=300&h=300&fit=crop",
+      "stock": 95
+    },
+    {
+      "id": 34,
+      "name": "Men's Leather Belt",
+      "description": "Premium brown leather belt.",
+      "price": 399,
+      "category": "Fashion",
+      "image": "https://images.unsplash.com/photo-1582542936744-652fde2b5b02?w=300&h=300&fit=crop",
+      "stock": 120
+    },
+    {
+      "id": 35,
+      "name": "Wireless Security Camera",
+      "description": "WiFi-enabled home security camera.",
+      "price": 2499,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=300&h=300&fit=crop",
+      "stock": 34
+    },
+    {
+      "id": 36,
+      "name": "Hand Blender",
+      "description": "Electric hand blender with 2 speeds.",
+      "price": 999,
+      "category": "Kitchen Appliances",
+      "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&h=300&fit=crop",
+      "stock": 76
+    },
+    {
+      "id": 37,
+      "name": "Floor Mop Set",
+      "description": "360-degree rotating microfiber mop.",
+      "price": 699,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop",
+      "stock": 80
+    },
+    {
+      "id": 38,
+      "name": "Android Tablet",
+      "description": "10-inch IPS display Android tablet.",
+      "price": 7999,
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=300&fit=crop",
+      "stock": 20
+    },
+    {
+      "id": 39,
+      "name": "Kitchen Knife Set",
+      "description": "5-piece stainless steel knife set.",
+      "price": 599,
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0ea3ffd0b7a?w=300&h=300&fit=crop",
+      "stock": 100
+    },
+    {
+      "id": 40,
+      "name": "Mini Table Fan",
+      "description": "USB-powered portable mini fan.",
+      "price": 349,
+      "category": "Home Appliances",
+      "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=300&h=300&fit=crop",
+      "stock": 90
+    },
+    {
+      "id": 41,
+      "name": "Face Wash",
+      "description": "Oil-control refreshing face wash.",
+      "price": 199,
+      "category": "Personal Care",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop",
+      "stock": 200
+    },
+    {
+      "id": 42,
+      "name": "Body Lotion",
+      "description": "Hydrating body lotion for smooth skin.",
+      "price": 249,
+      "category": "Personal Care",
+      "image": "https://images.unsplash.com/photo-1556228577-135b78d96b23?w=300&h=300&fit=crop",
+      "stock": 160
+    },
+    {
+      "id": 43,
+      "name": "Baby Diapers Pack",
+      "description": "Soft and absorbent baby diapers.",
+      "price": 499,
+      "category": "Baby Care",
+      "image": "https://images.unsplash.com/photo-1584839404049-94ab53b8a03e?w=300&h=300&fit=crop",
+      "stock": 120
+    },
+    {
+      "id": 44,
+      "name": "Car Vacuum Cleaner",
+      "description": "Portable mini car vacuum cleaner.",
+      "price": 999,
+      "category": "Automotive",
+      "image": "https://images.unsplash.com/photo-1565680323531-b32c16e4a8e7?w=300&h=300&fit=crop",
+      "stock": 52
+    },
+    {
+      "id": 45,
+      "name": "LED Torch Light",
+      "description": "Rechargeable LED torch with long battery life.",
+      "price": 349,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=300&h=300&fit=crop",
+      "stock": 70
+    },
+    {
+      "id": 46,
+      "name": "Instant Coffee Powder",
+      "description": "Premium blend instant coffee powder.",
+      "price": 299,
+      "category": "Grocery",
+      "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=300&fit=crop",
+      "stock": 90
+    },
+    {
+      "id": 47,
+      "name": "Digital Thermometer",
+      "description": "Fast and accurate digital thermometer.",
+      "price": 399,
+      "category": "Health",
+      "image": "https://images.unsplash.com/photo-1584555130003-0d25a2f6d6b4?w=300&h=300&fit=crop",
+      "stock": 55
+    },
+    {
+      "id": 48,
+      "name": "Room Air Freshener",
+      "description": "Long-lasting fragrance air freshener.",
+      "price": 199,
+      "category": "Home",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25856cd63?w=300&h=300&fit=crop",
+      "stock": 130
+    },
+    {
+      "id": 49,
+      "name": "Laptop Backpack",
+      "description": "Shock-resistant laptop backpack.",
+      "price": 1299,
+      "category": "Bags",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop",
+      "stock": 45
+    },
+    {
+      "id": 50,
+      "name": "Electric Rice Cooker",
+      "description": "1.8L multi-function electric rice cooker.",
+      "price": 1999,
+      "category": "Kitchen Appliances",
+      "image": "https://images.unsplash.com/photo-1562564055-307c56d78d11?w=300&h=300&fit=crop",
+      "stock": 38
+    }
+]
