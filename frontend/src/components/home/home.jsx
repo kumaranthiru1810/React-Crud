@@ -83,7 +83,7 @@ function Mainhome() {
                                 <div className="col-md-3">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <button type="button" className="btn btn-success" onClick={() => navigate(`editregister/${user._id}`)}>edit</button>
+                                            <button type="button" className="btn btn-success" onClick={() => navigate(`editregister/${user._id}`)}>edi</button>
                                         </div>
                                         <div className="col-md-6">
                                             <button
