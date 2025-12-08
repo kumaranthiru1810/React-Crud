@@ -27,10 +27,12 @@ function Loginold() {
         axios.post('http://localhost:8000/api/user/login',{email,password})
         .then(result=>{
             if(result.data.message === 'success'){
-                console.log(result.data.token);
+                // console.log(result.data.token);
+                // console.log(result.data.data);
                 
 
-                JSON.stringify(localStorage.setItem('token',result.data.token))
+                JSON.stringify(localStorage.setItem('token',result.data.token));
+                // JSON.stringify(localStorage.setItem('userdetail',result.data.data.email));
                 
                 Swal.fire({
                     title:'Login Successfully',

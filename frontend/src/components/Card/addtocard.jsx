@@ -1,101 +1,56 @@
-import { useEffect, useState } from "react";
-import Header from "../header/header";
+import { useEffect, useState } from "react"
+import Header from "../header/header"
 import axios from "axios";
-import "./products.css"; // optional
-import Swal from 'sweetalert2';
-import { useParams } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 
-const Products = () => {  
-    const [products, setProducts] = useState([]);
-    const [filterproducts, setfilterproducts] = useState([]);
-    const {id} = useParams();
-    
-
+const Card = () => {
+    const [storecarditem, setstorecarditem] = useState([]);
+    const [getcarditem, setgetcarditem] = useState([]);
     useEffect(() => {
-        getProducts();
-    }, []);
+        getcard();
+        getcarditems();
+    }, [])
+    const getcard = async () => {
+        try {
+            const card = await axios.get('http://localhost:8000/api/products/getcard');
+            console.log(card.data);
+            setstorecarditem(card.data);
+        }
+        catch (err) {
+            console.log(err);
 
-    const getProducts = async () => {
+        }
+    }
+    const getcarditems = async() => {
         try {
             const res = await axios.get("http://localhost:8000/api/products/product");
-            setProducts(res.data);
-            setfilterproducts(res.data);
+            setgetcarditem(res.data);
             console.log(res.data);
         } catch (err) {
             console.log(err);
         }
+    }
+
+    console.log(getcarditem);
+    
+    const newArray = storecarditem.map((item, index) => {
+    return {
+        ...item,
+        ...getcarditem[index]
     };
+});
 
-    const Addtocard = (productid)=>{
-        console.log(productid);
-        
-        try{
-            axios.post('http://localhost:8000/api/products/addtocard' , {productid,id})
-            .then((res)=>{
-                console.log(res.data);
-                
-                if(res.data === 'success'){
-                    Swal.fire({
-                        title:'Add To Card',
-                        text:'Add to card Successfully',
-                        icon:'success',
-                        timer:2000
-                    })
-                }else{
-                    Swal.fire({
-                        title:'Error',
-                        // text:<p>Add to card Successfully</p>,
-                        icon:'error',
-                        timer:2000,
-                        confirmButtonAriaLabel:false
-                    })
-                }
-            })
-            .catch((err) => {console.log(err)})
-        }catch(err){
-            console.log(err);
-            
-        }
-    }
+console.log(newArray);
 
-    //Search function
+    // console.log(storecarditem.length);
 
-    const handleSearchChange = (e) => {
-        const searchtext = e.target.value.toLowerCase();
-        const fileteredProducts = products.filter((product) => product.name.toLowerCase().includes(searchtext));
-        setfilterproducts(fileteredProducts);
-    }
 
     return (
         <>
             <Header />
-            <div className="container mt-4">
-                <div className="row">
-                    <div className="col-md-8">
-                        <div className="input-group">
-                            <span className="input-group-text bg-light border-end-0">
-                                <i className="bi bi-search text-muted"></i>
-                            </span>
-                            <input
-                                type="text"
-                                className="form-control border-start-0"
-                                placeholder="Search products by name, category, or description..."
-                                onChange={handleSearchChange}
-                                style={{
-                                    borderLeft: 'none',
-                                    padding: '12px 15px'
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <div className="col-md-4 d-flex">
-                        <button className="btn btn-primary col-12">+ Add</button>
-                    </div>
-                </div>
+            <div className="all-card">
                 <div className="row mt-5">
-                    {filterproducts.length > 0 ? (
-                        filterproducts.map((product) => (
+                    {newArray.length > 0 ? (
+                        newArray.map((product) => (
                             <div
                                 className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
                                 key={product._id || product.id}
@@ -195,58 +150,6 @@ const Products = () => {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {/* Add to Cart Button */}
-                                        <button
-                                            
-                                            className={`btn w-100 fw-bold ${product.stock > 0
-                                                ? 'btn-primary'
-                                                : 'btn-outline-secondary'
-                                                }`}
-                                            disabled={product.stock === 0}
-                                            style={{
-                                                transition: "all 0.3s ease",
-                                                border: "none",
-                                                padding: "10px"
-                                            }}        
-                                            onClick={()=>{Addtocard(product.id)}}
-                                        >
-                                            {product.stock > 0 ? (
-                                                <>
-                                                    <i className="bi bi-cart-plus me-2"></i>
-                                                    Add to Cart
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <i className="bi bi-x-circle me-2"></i>
-                                                    Out of Stock
-                                                </>
-                                            )}
-                                        </button>
-
-                                        {/* Quick Actions */}
-                                        {product.stock > 0 && (
-                                            <div className="d-flex justify-content-between mt-2">
-                                                <button
-                                                    className="btn btn-outline-secondary btn-sm"
-                                                    title="Add to Wishlist"
-                                                >
-                                                    <i class="fa-solid fa-heart"></i>
-                                                </button>
-                                                <button
-                                                    className="btn btn-outline-info btn-sm"
-                                                    title="Quick View"
-                                                >
-                                                    <i class="fa-solid fa-eye"></i>
-                                                </button>
-                                                <button
-                                                    className="btn btn-outline-success btn-sm"
-                                                    title="Buy Now"
-                                                >
-                                                    <i class="fa-solid fa-bolt-lightning"></i>
-                                                </button>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -267,34 +170,10 @@ const Products = () => {
                 </div>
             </div>
 
-            {/* Add this CSS for additional styling */}
-            <style jsx>{`
-  .product-card {
-    transition: all 0.3s ease;
-    border-radius: 12px;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
-  }
-  
-  .product-image {
-    border-radius: 12px 12px 0 0;
-  }
-  
-  .empty-state {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .badge {
-    font-size: 11px;
-    font-weight: 500;
-  }
-`}</style>
-        </>
-    );
-};
 
-export default Products;
+        </>
+    )
+}
+
+
+export default Card;
