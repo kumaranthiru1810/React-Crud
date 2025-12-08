@@ -21,10 +21,22 @@ function Home() {
 function Mainhome() {
     const navigate = useNavigate();
     // const {id} = useParams();
-    const [refresh, setRefresh] = useState(false)
+    const [refresh, setRefresh] = useState(false);
+    // const [key , setkey] = useState();
 
     useEffect(() => {
-        getusers();
+        const key = localStorage.getItem("token");
+        if (!key) {
+            // return;
+            Swal.fire({
+                title: 'Plese Login',
+                icon: 'warning'
+            })
+                .then(() => { navigate('/login') });
+        }
+        else {
+            getusers();
+        }
     }, [refresh]);
 
     let [usersdata, setusersdata] = useState([]);
@@ -34,7 +46,7 @@ function Mainhome() {
         try {
             const users = await axios.get('http://localhost:8000/api/user/');
             setusersdata(users.data);
-            console.log(users);
+            // console.log(users);
 
         }
         catch (err) {
@@ -83,7 +95,7 @@ function Mainhome() {
                                 <div className="col-md-3">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <button type="button" className="btn btn-success" onClick={() => navigate(`editregister/${user._id}`)}>edi</button>
+                                            <button type="button" className="btn btn-success" onClick={() => navigate(`editregister/${user._id}`)}>edit</button>
                                         </div>
                                         <div className="col-md-6">
                                             <button
@@ -97,7 +109,7 @@ function Mainhome() {
 
                                                     try {
                                                         const res = await axios.delete(
-                                                            `http://localhost:8000/deleteuser/${user._id}`
+                                                            `http://localhost:8000/api/user/deleteuser/${user._id}`
                                                         );
 
                                                         if (res.data === "success") {

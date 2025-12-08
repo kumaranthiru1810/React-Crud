@@ -17,7 +17,7 @@ const protect = async (req, res, next) => {
       
 
       // Verify token
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, process.env.SECURITY);
 
       // console.log("Decode id" , decoded.id); 
       const id = req.params.id;
@@ -27,7 +27,7 @@ const protect = async (req, res, next) => {
       const [user] = await Userdatamodel.findById(id);
 
       if (!user[0]) {
-        return res.status(401).json({ message: 'User not found' });
+        return res.json({ message: 'User not found' });
       }
 
       req.user = user[0];

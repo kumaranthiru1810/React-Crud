@@ -37,6 +37,10 @@ function Registerold() {
                 }
                 else{
                     // alert('Registered Successfully');
+                    // console.log(result.data);
+
+                    localStorage.setItem('username',name);
+                    
                     Swal.fire({
                         title:'Register Successfully',
                         text:'Welcome Back , '+ name,

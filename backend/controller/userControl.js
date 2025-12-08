@@ -2,22 +2,59 @@ const Userdatamodel = require('../models/user');
 // const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+let nodemailer = require('nodemailer');
 
-const registerUser =  async (req, res) => {
-    const { email, password } = req.body;
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'thirukumaran18102006@gmail.com',
+        pass: 'sqdi hluc nhsg sben'
+    }
+});
+
+const registerUser = async (req, res) => {
+    const { name, email, password } = req.body;
     Userdatamodel.findOne({ email: email })
         .then(user => {
             if (user) {
                 res.json('Already register');
             }
             else {
+                let mailOptions = {
+                    from: 'thirukumaran18102006@gmail.com',
+                    to: 'thirukumaran18102006@gmail.com',
+                    subject: 'Sending Email using Node.js',
+                    // text: 'That was easy!'
+                    html: `<p>The Name is :</p><h1>${name}</h1>`
+                };
+
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
                 Userdatamodel.create(req.body)
-                    .then(registers => res.json(registers))
+                    .then(() => res.json('success'))
                     .catch(err => res.json(err))
             }
         })
 }
-const loginUser =async (req, res) => {
+const deleteuser =  async(req,res) =>{
+    try{
+        const id = req.params.id;
+        Userdatamodel.findByIdAndDelete(id)
+        .then((user) =>{
+            return res.json('success');
+        })
+        .catch((err) =>{return res.json('error')})
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -29,10 +66,10 @@ const loginUser =async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (isMatch) {
-            const toki = jwt.sign({email:user.email},process.env.SECURITY)
+            const toki = jwt.sign({ email: user.email }, process.env.SECURITY);
             console.log(toki);
-            
-            return res.json({message:"success",token:toki});
+
+            return res.json({ message: "success", token: toki , data: req.body});
         } else {
             return res.json("wrong password");
         }
@@ -43,7 +80,20 @@ const loginUser =async (req, res) => {
     }
 };
 
-const getusers =  async (req, res) => {
+const getoneusers = async(req,res) =>{
+    // const {email} = req.params.email;
+    console.log(req.body);
+    
+    try{
+        const oneuser = await Userdatamodel.findOne({email});
+        res.json(oneuser);
+    }
+    catch(err){
+        res.json(err);
+    }
+}
+
+const getusers = async (req, res) => {
     try {
         const users = await Userdatamodel.find();
         res.json(users);
@@ -54,20 +104,20 @@ const getusers =  async (req, res) => {
 
 };
 
-const getparusers =  async (req , res) =>{
-    try{
+const getparusers = async (req, res) => {
+    try {
         const id = req.params.id;
         const edituser = await Userdatamodel.findById(id);
         console.log("userdata:", edituser);
-        
+
         res.json(edituser);
     }
-    catch(err){
+    catch (err) {
         res.json(err);
     }
 };
 
-const updateusers =  async (req, res) => {
+const updateusers = async (req, res) => {
     const id = req.params.id;
     const { name, email, password } = req.body;
 
@@ -89,9 +139,10 @@ const updateusers =  async (req, res) => {
     }
 };
 
-module.exports={
+module.exports = {
     registerUser,
     loginUser,
+    deleteuser,
     getusers,
     getparusers,
     updateusers
