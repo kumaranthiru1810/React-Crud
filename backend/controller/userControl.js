@@ -69,7 +69,7 @@ const loginUser = async (req, res) => {
             const toki = jwt.sign({ email: user.email }, process.env.SECURITY);
             console.log(toki);
 
-            return res.json({ message: "success", token: toki , data: req.body});
+            return res.json({ message: "success", token: toki , data: user});
         } else {
             return res.json("wrong password");
         }
