@@ -9,18 +9,6 @@ import axios from 'axios';
 
 function Header() {
 
-    // const [username, setusername] = useState();
-
-    // const userdetail = localStorage.getItem("userdetail");
-    // console.log(userdetail);
-
-    // if(userdetail){
-    //     const name = axios.get(`http://localhost:8000/api/users/getoneuser/${userdetail}`)
-    //     setusername(name);
-    // }
-
-    // console.log(username);
-
     const username = localStorage.getItem('username');
 
 
@@ -28,8 +16,9 @@ function Header() {
 
     const handlelogout = () => {
         const toki = localStorage.removeItem("token");
+        const usname = localStorage.removeItem("username");
         // console.log(toki);
-        if (!toki) {
+        if (!toki && !usname) {
             Swal.fire({
                 title: 'Logout Successfully',
                 icon: 'success'
@@ -37,10 +26,6 @@ function Header() {
                 .then(() => { navigate('/login') })
         }
     }
-
-    // const islogged = () => {
-    //     return !!localStorage.getItem("token");
-    // }
 
     return (
         <nav className='bg-white'>
@@ -76,16 +61,19 @@ function Header() {
                         <div>
                             {/* <i class="fa-solid fa-power-off log-icon" ></i> */}
                             {username ? (
-                                <>
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <User size={18} />
-                                        </div>
-                                        <div className='col-md-6'>
-                                            <span className="username">{username}</span>
-                                        </div>
+
+                                <div className="row">
+                                    <div className="col-md-4">
+                                        <User size={18} />
                                     </div>
-                                </>
+                                    <div className='col-md-4'>
+                                        <span className="username">{username}</span>
+                                    </div>
+                                    <div className="col-md-4">
+                                        <Power className='log-icon' size={18} onClick={handlelogout} />
+                                    </div>
+                                </div>
+
                             ) : (
                                 <Power className='log-icon' size={18} onClick={handlelogout} />
                             )}

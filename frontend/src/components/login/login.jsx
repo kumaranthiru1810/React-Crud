@@ -28,11 +28,11 @@ function Loginold() {
         .then(result=>{
             if(result.data.message === 'success'){
                 // console.log(result.data.token);
-                // console.log(result.data.data);
+                console.log(result.data.data);
                 
 
                 JSON.stringify(localStorage.setItem('token',result.data.token));
-                // JSON.stringify(localStorage.setItem('userdetail',result.data.data.email));
+                JSON.stringify(localStorage.setItem('username',result.data.data.name));
                 
                 Swal.fire({
                     title:'Login Successfully',
@@ -94,7 +94,7 @@ function Loginold() {
                                     </button>
                                 </div>
                                 <div className="col-md-6 mt-5" style={{ textAlign: 'center' }}>
-                                    <p>Don't have an account? <a href="/register">Register</a></p>
+                                    <p className="text-black">Don't have an account? <a href="/register">Register</a></p>
                                 </div>
                             </div>
                         </form>

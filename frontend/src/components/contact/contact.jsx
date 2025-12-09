@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Header from '../header/header';
@@ -17,13 +17,26 @@ const Contact = () => {
 
 const Contactmain = () => {
 
-    let [ firstname, setfirstname ] = useState();
-    let [ lastname, setlastname ] = useState();
-    let [ email, setemail ] = useState();
-    let [ phone, setphone ] = useState();
-    let [ details, setdetails ] = useState();
+    let [firstname, setfirstname] = useState();
+    let [lastname, setlastname] = useState();
+    let [email, setemail] = useState();
+    let [phone, setphone] = useState();
+    let [details, setdetails] = useState();
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+
+        const key = localStorage.getItem("token");
+        if (!key) {
+            // return;
+            Swal.fire({
+                title: 'Plese Login',
+                icon: 'warning'
+            })
+                .then(() => { navigate('/login') });
+        }
+    })
 
     const HandleSubmit = (e) => {
         e.preventDefault();
@@ -73,7 +86,7 @@ const Contactmain = () => {
                                 name='lastname'
                                 placeholder='Lastname'
                                 className='form-control'
-                                onChange={(event) => {setlastname(event.target.value) }}
+                                onChange={(event) => { setlastname(event.target.value) }}
                                 required
                             />
                         </div>

@@ -80,7 +80,7 @@ function Registerold() {
                                 <input type="submit" value="Submit" className="btn btn-primary" />
                             </div>
                             <div className="col-md-6 mt-5">
-                                <p>Already have an account? <a href="/">Login</a></p>
+                                <p className="text-black">Already have an account? <a href="/login">Login</a></p>
                             </div>
                         </div>
                     </form>
